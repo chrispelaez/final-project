@@ -1,3 +1,25 @@
+#This is the final version of the game
+#updated rock paper scissors game now has 12 options enter options using letters as your input.
+#all avalible options
+#r=rock
+#p=paper
+#s=scissors
+#l=lightsaber
+#b=blaster
+#i=ion grenade
+#w=wolf
+#h=human
+#g=goblin
+#a=air
+#f=fire
+#e=earth
+#Hidden in the code there is a way to get 1 free point.....you may need it but its up to you to figure it out.
+
+#Instructions for Running my Project
+#step 1 open a new file on python
+#step 2 copy and paste the code
+#step 3 select run module from the options menu
+#step 4 enjoy!
 
 import random
 choicelist = ["Rock", "Paper", "Scissors","lightsaber","blaster","ion grenade","wolf","human","goblin","air","fire","earth"]
