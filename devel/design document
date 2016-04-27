@@ -1,85 +1,22 @@
-#This is the final version of the game
-#updated rock paper scissors game now has 12 options enter options using letters as your input.
-#all avalible options
-#r=rock
-#p=paper
-#s=scissors
-#l=lightsaber
-#b=blaster
-#i=ion grenade
-#w=wolf
-#h=human
-#g=goblin
-#a=air
-#f=fire
-#e=earth
-#Hidden in the code there is a way to get 1 free point.....you may need it but its up to you to figure it out.
-
-#Instructions for Running my Project
-#step 1 open a new file on python
-#step 2 copy and paste the code
-#step 3 select run module from the options menu
-#step 4 enjoy!
-
-import random
-choicelist = ["Rock", "Paper", "Scissors","lightsaber","blaster","ion grenade","wolf","human","goblin","air","fire","earth"] 
-#I choose to make a list for all avalible options that both the player and computer will use. I had a version prior to this one where if i gave it options in terms of a function the game would crash.
-wins = 0
-losses = 0
-run = True
-while run == True:# this starts out the game with both players having 0 points.
-    user_input = input(str("r for rock, p for paper, and s for scissors.\n"))# asigns input rules.
-    if user_input == "r":# Figured having players input letters instead of words would make the game go faster
-        user_input = 0
-    elif user_input == "p":
-        user_input = 1
-    elif user_input == "s":
-        user_input = 2
-    elif user_input == "l":
-        user_input = 3
-    elif user_input == "b":
-        user_input = 4
-    elif user_input == "i":
-        user_input = 5
-    elif user_input == "w":
-        user_input = 6
-    elif user_input == "h":
-        user_input = 7
-    elif user_input == "g":
-        user_input = 8
-    elif user_input == "a":
-        user_input = 9
-    elif user_input == "f":
-        user_input = 10
-    elif user_input == "e":
-        user_input = 11
-    else:
-        print("Please enter a valid choice.")# game will only work with pre-determend inputs
-        if user_input == "joust":# This is the hidden cheat code for the game by entering the word "joust" the player gains 1 point(this is one of the easter eggs in the game.)
-            wins = wins + 1           
-        continue #continues the game after the user inputs the cheet code 
-    comp_input = random.randint(0, 11) # Tells the computer to randomly select its options from the list
-    print(choicelist[user_input], "vs.", choicelist[comp_input]) #Prints the options both players selected
-    if user_input == comp_input:# growing up when ever my friends and I would play Rock, Paper, Sissors whenever there was a draw the first one to shout out the word "joust" would win the bout.
-        print("Joust.")
-        losses += -1# In order to bring that concept into the game whenever there is a draw the computer losses one point
-    elif ((user_input - comp_input + 3) % 3 == 1): # If the users choice is greater than the computers choice the player wins 
-        print("Win.")
-        wins = wins + 1
-    else:
-        print("Lose.")
-        losses += 1
-    print("Player: ", wins, "\nComputer: ", losses)
-    again = True
-    while again == True:
-        playagain = input(str("Play again (y or n)? ")) # Prompts the users input in order to continue the game.
-        if playagain == "n":
-            print("Goodbye!")# prints goodbye if the player chooses "n"
-            run = False
-            again = False
-        elif playagain == "y":
-            print("Let's play again.") # prints "lets play again" when the user inputs "y"
-            again = False
-        else:
-            print("Please enter a valid choice.")
-            continue# loops the program untill the user ends the game by pressing "N". 
+#I wanted to make a rock paper scissors game that ran on the concept of RPS 15. 
+#Rps 15 is a rock paper scissors game with 15 options for players to use this game uses 12.
+#Growing up rock paper scissors was the game that decided almost any problems that would arise between friends.
+#I choose to make a list for all avalible options that both the player and computer will use. 
+#I had a version prior to this one where if i gave it options in terms of a function the game would crash. 
+#I wanted to create a game that kept score, and had a while loop to keep the game from ending as well as had hidden options for the players to use.
+#One of the easter eggs for the game was if the player typed in "joust" the player would gain 1 point.
+#If the computer and player had a draw the word joust would apear and 1 point would be subtracted from the computer.
+#growing up when ever my friends and I would play Rock, Paper, Sissors whenever there was a draw the first one to shout out the word "joust" would win the bout.
+#In order to bring that concept into the game whenever there is a draw the computer losses one point.
+#the rules of the game are simple: 
+#Both players start out with 0 points.
+#The options presented to the player are the 3 regular options rock paper scissors.
+#The easter egg is the fact that if the user presses other keys new options would be played instead of the traditional three.
+#If the users choice is greater than the computers choice the player wins.
+#If the computers choice is greater than the users choice then the computer wins.
+#After each bout the player is given the choice to continue by pressing "y" or pressing "n" to quit.
+#If the player presses "n" then the game ends.
+#The items are listed in the rockpaper scissors format.
+#For example Fire beats air but earth beats fire air beats earth.
+#With all options in play the game would look like This
+#Fire beats air but human beats fire while goblin beats human.
